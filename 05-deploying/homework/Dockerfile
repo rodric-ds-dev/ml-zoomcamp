@@ -7,7 +7,7 @@ ENV PATH="/code/.venv/bin:$PATH" \
     UV_LINK_MODE=copy
 
 WORKDIR /code
-COPY pyproject.toml uv.lock .python-version ./
+COPY pyproject.toml uv.lock ./
 RUN uv sync --locked --no-dev
 
 COPY model.py predict.py feature_defaults.json model_metadata.json pipeline.bin q6_test.py ./
